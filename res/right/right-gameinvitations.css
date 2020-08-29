@@ -1,0 +1,73 @@
+.ant-layout-sider-children {
+  height: 100%;
+  margin-top: -0.1px;
+  padding-top: 0.1px;
+}
+
+
+.quizbar_Quizbar__JXSbB{
+	background-color:white;
+	margin-bottom:40px;
+}
+.quizbar_Quizbar__JXSbB h2{
+	margin:0;
+	margin-top:10px;
+	color:#292059;
+	text-align: center;
+	font-weight:600;
+}
+
+
+
+.quizbar_Gamebar__2F733{
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+.quizbar_Gamebar__2F733 button{
+	margin:0;
+	border:2px #292059 solid;
+	color:#292059;
+	border-radius: 0.3rem;
+	text-align: right;
+	font-weight:600;
+	background:none;
+	align-self:flex-end;
+	margin-right:20px;
+}
+
+
+
+.quizbar_Game__2dK06{
+	padding:0;
+	list-style: none;
+	margin: 0;
+}
+.quizbar_Game__2dK06 li{
+	//max-width: 200px;
+	display: flex;
+	flex-direction: column;
+	margin:25px 20px;
+	border-radius:0.5rem;
+	box-shadow: 0 2px 8px #ccc;
+	padding:0.5rem;
+}
+.quizbar_Game__2dK06 li > *{
+	//flex-basis: 100%;
+}
+.quizbar_Game__2dK06 li h3{
+	margin:0;
+	text-align: center;
+	margin-bottom:5px;
+	padding-bottom:5px;
+	border-bottom:1px gray solid;
+}
+.quizbar_Game__2dK06 li p{
+	margin:0;
+}
+.quizbar_Game__2dK06 li a{
+	margin-top:5px;
+	text-align:center;
+	color:#292059;
+	font-weight: 600;
+}

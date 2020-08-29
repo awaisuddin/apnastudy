@@ -1,0 +1,387 @@
+<head>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+	<script src="https://kit.fontawesome.com/86c304b167.js" crossorigin="anonymous"></script><link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet"><link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet"><link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
+	<script src="https://use.fontawesome.com/59e5dddc41.js"></script><link href="https://use.fontawesome.com/59e5dddc41.css" media="all" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&amp;family=Piedra&amp;family=Sriracha&amp;family=Suez+One&amp;family=Lobster&amp;family=Josefin+Sans&amp;family=Jost:wght@600&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;display=swap" rel="stylesheet">
+    <title>Mock Test</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   
+	
+  <style type="text/css">body{
+	background-color:#f2f2f2;
+	font-family: sans-serif;
+}
+
+</style>
+
+
+
+<style type="text/css">
+
+.division a {
+	  color: black;
+	  font-weight: bold;
+	}
+	
+.division a:hover {
+	  transform: scale(1.1);
+	  transition: all 0.2s;
+	}
+	
+.division {
+	  display: flex;
+	  margin: 20px;
+	  flex-direction: row;
+	}
+	
+.icon {
+	  margin-left: 10px;
+	  margin-right: 10px;
+	  color: grey;
+	}
+	
+	
+.Header {
+  min-width: 100%;
+}
+.Header section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+
+  padding: 0.4rem;
+}
+
+.Header section img {
+  width: 120px;
+  height: 50px;
+  margin: 0;
+  margin-left: 20px;
+}
+.Search2,
+.Search {
+  display: flex;
+  height: 35px;
+  margin-left: 40%;
+}
+.Search2 div {
+  display: flex;
+}
+.Search2 {
+  display: none;
+  margin: 10px 10px;
+  justify-content: space-between;
+  padding: 0 0.7rem;
+  align-items: center;
+}
+.Search2 button {
+  background-color: #292059;
+  color: white;
+  border: none;
+  letter-spacing: 0.1rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.3rem;
+  font-weight: 700;
+}
+.Search2 input,
+.Search input {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 0.2rem 0 0 0.2rem;
+  border: 2px #292059 solid;
+  color: #292059;
+  min-width: 280px;
+}
+.Search2 div button,
+.Search button {
+  border-radius: 0 0.2rem 0.2rem 0;
+  border: none;
+  background-color: #292059;
+  color: white;
+}
+.header_user {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.header_user img {
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer;
+}
+.Header section h2 {
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  color: #292059;
+  margin: 0;
+}
+
+}
+.Dropdown {
+  display: inline !important;
+  padding: 0 !important;
+}
+.Dropdown li {
+  margin: 15px 0;
+}
+.Dropdown li p {
+  margin: 0;
+  font-size: 0.7rem;
+}
+.Dropdown li a {
+  color: #292059;
+  font-weight: 600;
+}
+.Dropdown ul {
+  display: none;
+  position: absolute;
+  padding: 10px 0 10px 25px;
+  box-sizing: border-box;
+  list-style-type: circle;
+  width: 150px;
+  right: 15px;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 8px #b3b3b3;
+  background-color: white;
+}
+.Dropdown_content button {
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.1rem;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+}
+.Dropdown:hover .Dropdown_content {
+  display: block !important;
+}
+.Dropdown_content {
+  max-height: 300px;
+  overflow: auto;
+  z-index: 1;
+}
+@media (max-width: 1000px) {
+  
+  .Header {
+    margin-bottom: 0;
+  }
+  .Header section {
+    padding: 0.4rem 0.2rem;
+  }
+  .Header section h2 {
+    display: none;
+  }
+  .Header section img {
+    width: 80px;
+    height: 40px;
+    margin-left: 0px;
+  }
+  .header_user {
+    margin-right: 10px;
+  }
+  .header_user h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: none;
+  }
+  .header_user img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .Search {
+    display: none;
+  }
+  .Search2 {
+    display: flex;
+  }
+  .Search2 div {
+    height: 27px;
+  }
+  .Search2 input {
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+  .Search2 div button {
+    font-size: 0.8rem;
+  }
+  .Header h1 {
+    display: block;
+  }
+  
+}
+
+
+</style></head>
+
+
+
+<body> 
+
+
+
+	<div class="Header"> 
+		<section> 
+			
+	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left " style="display:none;margin-top:410px;margin-left:-5px;" id="leftMenu">
+
+  <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large">&times;</button>
+  <a href="#" class=" w3-button division"><span class="material-icons icons_main icon" aria-hidden="true"> 
+home</span>HOME</a>
+  <a href="#" class=" w3-button division"><span class="material-icons icons_main icon" aria-hidden="true"> 
+hourglass_empty</span>PRACTICE</a>
+  <a href="#" class=" w3-button division"><span class="material-icons icons_main icon" aria-hidden="true"> 
+notifications_none</span>MOCK TEST </a>
+  <a href="#" class=" w3-button division"><span class="material-icons icons_main icon" aria-hidden="true"> 
+edit</span>QUIZ MANIA </a>
+  <a href="#" class=" w3-button division"><span class="material-icons icons_main icon" aria-hidden="true"> 
+textsms</span>DISCUSS </a>
+  <a href="#" class=" w3-button division"><span class="material-icons icons_main icon" aria-hidden="true"> 
+event</span>DAILY DOSE</a>
+  <a href="#" class=" w3-button division"><span class="material-icons icons_main icon" aria-hidden="true"> 
+settings</span>PROFILE</a>
+  <a href="#" class=" w3-button division"><span class="material-icons icons_main icon" aria-hidden="true"> 
+monetization_on</span>MANAGE COINS </a>
+</div>
+<button class="w3-button  w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
+<img src="logo.jpg" alt="">
+
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none;right:0;margin-top:410px;" id="rightMenu">
+  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <!--Left Bars Here-->
+  
+  
+  
+  
+  
+  
+</div>
+
+
+			<div class="Search"> 
+				<input type="search" placeholder="search"> 
+				<button> 
+					<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> 
+					<path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"> 
+					</path> 
+					</svg> 
+				</button> 
+			</div> 
+			<div class="header_user"> 
+				<h3> 
+				Patrick Cruz</h3> 
+				<img src="avatar.png" class="avatar" alt=""> 
+				<button class="w3-button  w3-xlarge w3-right" onclick="openRightMenu()">&#9776;</button>
+			</div> 
+		</section> 
+	<div class="Search2"> 
+		<div> 
+			<input type="search" placeholder="search"> 
+			<button> 
+				<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> 
+				<path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"> 
+				</path> 
+				</svg> 
+			</button> 
+		</div> 
+		<section class="Dropdown"> 
+			<button> 
+			Live</button> 
+			<ul class="Dropdown_content"> 
+				<li> 
+					<a href=""> 
+					Topic name 1</a> 
+					<p> 
+					10 Oct 2020</p> 
+				</li> 
+				<li> 
+					<a href=""> 
+					Topic name 2</a> 
+					<p> 
+					11 Oct 2020</p> 
+				</li> 
+				<li> 
+					<a href=""> 
+					Topic name 3</a> 
+					<p> 
+					12 Oct 2020</p> 
+				</li> 
+				<li> 
+					<a href=""> 
+					Topic name 4</a> 
+					<p> 
+					13 Oct 2020</p> 
+				</li> 
+				<button> 
+				More</button> 
+			</ul> 
+		</section> 
+	</div> 
+	</div> 
+	
+	
+	
+	<!-- Header Complete -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Post Data Here    -->  
+	<div class="w3-container" >
+   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	</div>
+
+<script>
+function openLeftMenu() {
+  document.getElementById("leftMenu").style.display = "block";
+}
+
+function closeLeftMenu() {
+  document.getElementById("leftMenu").style.display = "none";
+}
+
+function openRightMenu() {
+  document.getElementById("rightMenu").style.display = "block";
+}
+
+function closeRightMenu() {
+  document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+
+
+</body> 

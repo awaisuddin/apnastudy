@@ -1,0 +1,1852 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+	
+    
+    
+    
+	
+    <title>Quizarty</title>
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  
+	<style type="text/css">
+  
+  
+	 /*   Navigation Bar - left   */
+
+	.left_navbar {
+	  height: 100%;
+    padding-top: 0.1px;
+	}
+
+
+
+	.task {
+	  background-color: white;
+	  align-items: center;
+	  text-align: center;
+	}
+	.task img {
+	  width: 110px;
+	  height: 100px;
+	}
+
+
+
+	.division a {
+	  color: black;
+	  font-weight: bold;
+	}
+	.division a:hover {
+	  transform: scale(1.1);
+	  transition: all 0.2s;
+	}
+	.division {
+	  display: flex;
+	  margin: 20px;
+	  flex-direction: row;
+	}
+
+
+	@media (max-width: 1000px) {
+	  
+	  .division {
+		margin: 20px 10px;
+	  }
+	}
+
+
+
+	.icons_main {
+	  width: 1em;
+	  height: 1em;
+	  overflow: hidden;
+	  font-size: 1.5rem;
+	  flex-shrink: 0;
+	  user-select: none;
+	}
+
+
+	.icon {
+	  margin-left: 10px;
+	  margin-right: 10px;
+	  color: grey;
+	}
+
+
+	.ActiveLink {
+	  color: #b300b3 !important;
+	  pointer-events: none;
+	}
+
+
+
+
+	.coins {
+	  background-color: rgb(43, 43, 134);
+	  color: white;
+	  margin: 10px;
+	  margin-top: 50px;
+	  padding-top: 10px;
+	  padding-left: 20px;
+	  padding-right: 20px;
+	  padding-bottom: 2px;
+	  border-radius: 10px;
+	}
+	.coins h3 {
+	  color: white;
+	}
+
+
+
+
+	@media(max-width:1000px){
+	  
+	  .coins{
+		display: none;
+	  }
+	}
+
+
+
+	.coins {
+	  background-color: rgb(43, 43, 134);
+	  color: white;
+	  margin: 10px;
+	  margin-top: 80px;
+	  padding-top: 10px;
+	  padding-bottom: 2px;
+	  border-radius: 10px;
+	}
+	.coins h3 {
+	  color: white;
+	}
+	</style>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  <style type="text/css">
+  
+  
+  
+  body{
+	font-family: sans-serif;
+}
+
+</style>
+
+
+
+<style type="text/css">
+
+
+/*   Head Bar    */
+
+.Header {
+  min-width: 100%;
+}
+.Header section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+
+  padding: 0.4rem;
+}
+
+.Header section img {
+  width: 120px;
+  height: 50px;
+  margin: 0;
+  margin-left: 20px;
+}
+.Search2,
+.Search {
+  display: flex;
+  height: 35px;
+  margin-left: 40%;
+}
+.Search2 div {
+  display: flex;
+}
+.Search2 {
+  display: none;
+  margin: 10px 10px;
+  justify-content: space-between;
+  padding: 0 0.7rem;
+  align-items: center;
+}
+.Search2 button {
+  background-color: #292059;
+  color: white;
+  border: none;
+  letter-spacing: 0.1rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.3rem;
+  font-weight: 700;
+}
+.Search2 input,
+.Search input {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 0.2rem 0 0 0.2rem;
+  border: 2px #292059 solid;
+  color: #292059;
+  min-width: 280px;
+}
+.Search2 div button,
+.Search button {
+  border-radius: 0 0.2rem 0.2rem 0;
+  border: none;
+  background-color: #292059;
+  color: white;
+}
+.header_user {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.header_user img {
+  width: 50px !important;
+  height: 50px !important;
+  cursor: pointer;
+}
+.Header section h2 {
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: 0.1rem;
+  color: #292059;
+  margin: 0;
+}
+.Header_toggle {
+  width: 40px;
+  height: 40px;
+  padding: 0.3rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.Header_toggle div {
+  height: 3px;
+  width: 100%;
+  background-color: #292059;
+}
+.Dropdown {
+  display: inline !important;
+  padding: 0 !important;
+}
+.Dropdown li {
+  margin: 15px 0;
+}
+.Dropdown li p {
+  margin: 0;
+  font-size: 0.7rem;
+}
+.Dropdown li a {
+  color: #292059;
+  font-weight: 600;
+}
+.Dropdown ul {
+  display: none;
+  position: absolute;
+  padding: 10px 0 10px 25px;
+  box-sizing: border-box;
+  list-style-type: circle;
+  width: 150px;
+  right: 15px;
+  border-radius: 0.3rem;
+  box-shadow: 0 2px 8px #b3b3b3;
+  background-color: white;
+}
+.Dropdown_content button {
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.1rem;
+  font-size: 0.7rem;
+  margin-bottom: 10px;
+}
+.Dropdown:hover .Dropdown_content {
+  display: block !important;
+}
+.Dropdown_content {
+  max-height: 300px;
+  overflow: auto;
+  z-index: 1;
+}
+@media (max-width: 1000px) {
+  .Header_toggle {
+    display: flex;
+    min-width: 30px;
+    max-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    margin: 0 5px;
+  }
+  .Header {
+    margin-bottom: 0;
+  }
+  .Header section {
+    padding: 0.4rem 0.2rem;
+  }
+  .Header section h2 {
+    display: none;
+  }
+  .Header section img {
+    width: 80px;
+    height: 40px;
+    margin-left: 0px;
+  }
+  .header_user {
+    margin-right: 10px;
+  }
+  .header_user h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: none;
+  }
+  .header_user img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .Search {
+    display: none;
+  }
+  .Search2 {
+    display: flex;
+  }
+  .Search2 div {
+    height: 27px;
+  }
+  .Search2 input {
+    font-size: 0.8rem;
+    min-width: 100px;
+  }
+  .Search2 div button {
+    font-size: 0.8rem;
+  }
+  .Header h1 {
+    display: block;
+  }
+  
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+
+<style>
+
+
+/*   Column Sections   */
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+/* Create three equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 200px;
+  height: 100%; 
+}
+
+.column2 {
+  float: left;
+  width: auto;
+  margin-left: 200px;
+  margin-right: 220px;
+  height: 100%; 
+}
+
+.column3 {
+  float: right;
+  width: 220px;
+  height: 100%; 
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media (max-width: 1000px) {
+	.column1 {
+	  display: none 
+	}
+
+	.column2 {
+	  width: 100%;
+	  margin-left: 0px;
+	  margin-right: 0px;
+	  height: 100%; 
+	}
+
+	.column3 {
+	  display: none;
+	}
+
+	/* Clear floats after the columns */
+	.row:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+	
+	.closebtn {
+	  background-color: none;
+	  float:right;
+
+    }
+}
+
+
+</style>
+
+
+
+
+<style type="text/css"> 
+body{
+	font-family: sans-serif;
+}
+
+
+.left_navbar_aside{
+  min-width:220px !important;
+  background-color:white !important;
+}
+
+@media (max-width: 1000px) {
+  
+  .left_navbar_aside{
+    display: none !important;
+  }
+}
+
+
+.slider {
+  position: relative;
+  /* fix firefox can't set width smaller than content on flex item */
+  min-width: 0;
+  background: #001529;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+
+.left_navbar {
+  height: 100%;
+  margin-top: -0.1px;
+  padding-top: 0.1px;
+}
+
+
+.tasker {
+  background-color: white;
+  align-items: center;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.tasker a {
+  color: black;
+  font-weight: bold;
+}
+.tasker a:hover {
+  color: black;
+  margin-left: 10px;
+}
+
+.tasker button {
+  background-color: rgb(45, 29, 134);
+  color: white;
+  border: none;
+  font-size: 13px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+
+
+
+.divisionP {
+  display: flex;
+
+  margin: 20px;
+  flex-direction: row;
+}
+.divisionP p {
+  font-size: 10px;
+}
+
+
+
+
+
+
+.icons_main {
+  width: 1em;
+  height: 1em;
+  overflow: hidden;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  user-select: none;
+}
+
+
+
+
+
+
+
+.iconic {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: orangered;
+}
+
+
+.iconic {
+  margin-left: 10px;
+  margin-right: 10px;
+  color: orangered;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+}
+
+
+.imagesvg {
+  height: 100px;
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+<body> 
+
+
+
+ 
+<!--                                Head Bar                                 -->
+
+	<div class="Header"> 
+		<section> 
+			<div onclick="w3_open()" class="Header_toggle"> 
+				<div> 
+				</div> 
+				<div> 
+				</div> 
+				<div> 
+				</div> 
+			</div> 
+			<img src="head/logo.jpg" alt=""> 
+			<div class="Search"> 
+				<input type="search" placeholder="search"> 
+				<button> 
+					<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> 
+					<path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"> 
+					</path> 
+					</svg> 
+				</button> 
+			</div> 
+			<div class="header_user"> 
+				<h3> 
+				Patrick Cruz</h3> 
+				<img src="head/avatar.png" class="avatar" alt=""> 
+			</div> 
+		</section> 
+		<div class="Search2"> 
+			<div> 
+				<input type="search" placeholder="search"> 
+				<button> 
+					<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"> 
+					<path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"> 
+					</path> 
+					</svg> 
+				</button> 
+			</div> 
+			<section class="Dropdown"> 
+				<button> 
+				Live</button> 
+				<ul class="Dropdown_content"> 
+					<li> 
+						<a href=""> 
+						Topic name 1</a> 
+						<p> 
+						10 Oct 2020</p> 
+					</li> 
+					<li> 
+						<a href=""> 
+						Topic name 2</a> 
+						<p> 
+						11 Oct 2020</p> 
+					</li> 
+					<li> 
+						<a href=""> 
+						Topic name 3</a> 
+						<p> 
+						12 Oct 2020</p> 
+					</li> 
+					<li> 
+						<a href=""> 
+						Topic name 4</a> 
+						<p> 
+						13 Oct 2020</p> 
+					</li> 
+					<button> 
+					More</button> 
+				</ul> 
+			</section> 
+		</div> 
+	</div> 
+
+
+<!--                                Main Section                                -->
+
+
+
+
+
+
+<div class="row">
+  <div class="column1" id="mySidebar" style="background-color: #ffffff;">
+  
+  <!--                                Section  LEFT                              -->
+  
+    <a class="closebtn Header_toggle"
+  onclick="w3_close()">X</a>
+	
+	<div class="left_navbar"> 
+<div class="task"> 
+
+<div class="division"> 
+<span class="material-icons icons_main icon" aria-hidden="true"> 
+home</span> 
+<a href="" aria-current="page" class="ActiveLink"> 
+HOME</a> 
+</div> 
+ 
+<div class="division"> 
+<span class="material-icons icons_main icon" aria-hidden="true"> 
+hourglass_empty</span> 
+<a href=""> 
+PRACTICE</a> 
+</div> 
+ 
+<div class="division"> 
+<span class="material-icons icons_main icon" aria-hidden="true"> 
+notifications_none</span> 
+<a href=""> 
+MOCK TEST</a> 
+</div> 
+ 
+<div class="division"> 
+<span class="material-icons icons_main icon" aria-hidden="true"> 
+edit</span> 
+<a href=""> 
+QUIZ MANIA</a> 
+</div> 
+ 
+<div class="division"> 
+<span class="material-icons icons_main icon" aria-hidden="true"> 
+textsms</span> 
+<a href=""> 
+DISCUSS</a> 
+</div> 
+ 
+<div class="division"> 
+<span class="material-icons icons_main icon" aria-hidden="true"> 
+event</span> 
+<a href=""> 
+DAILY DOSE</a> 
+</div> 
+ 
+<div class="division"> 
+<span class="material-icons icons_main icon" aria-hidden="true"> 
+settings</span> 
+<a href=""> 
+PROFILE</a> 
+</div> 
+ 
+<div class="division"> 
+<span class="material-icons icons_main icon" aria-hidden="true"> 
+monetization_on</span> 
+<a href=""> 
+MANAGE COINS</a> 
+</div> 
+ 
+<div class="coins"> 
+<h3> 
+Available Coins</h3> 
+<p> 
+10,000,000</p> 
+</div> 
+ 
+</div> 
+ 
+</div> 
+
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="column2" >
+    
+	
+	
+	<!--                                Main Center Section                                -->
+	
+	
+	
+	
+
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #dedfe1;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+}
+
+.wrapper{
+  margin-top: 20px;
+}
+
+.container{
+  width: auto;
+  height: 134px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.img-container{
+  width: 40%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+.img-container img{
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.content{
+  width: auto;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+}
+
+.head{
+  padding-bottom: 30px;
+}
+
+.head p{
+  font-size: 28px;
+  color: #444444;
+  font-weight: 600;
+}
+
+.head span{
+  color: #aaabaf;
+  font-size: 14px;
+}
+
+.data{
+  width: 90%;
+  overflow: hidden;
+}
+
+.inner-data{
+  width: 50%;
+  float: left;
+  text-align: left;
+  color: #aaabaf;
+}
+
+.inner-data p{
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+.inner-data span{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
+
+.img-container:after{
+  font-family: fontawesome;
+  content:"\f099";
+  position: absolute;
+  color: #fff;
+  font-size: 18px;
+}
+
+
+.floating-icon{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 38%;
+  right: -5%;
+  background: #1DA1F2;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.floating-icon .fa{
+  position: absolute;
+  left: 18px;
+  top: 15px;
+  color: #fff;
+  font-size: 20px;
+  transition: all 1s ease;
+}
+
+.floating-icon.active .fa{
+    transform: rotate(45deg); 
+    transition: all 1s ease;
+}
+
+.btn{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  background: #1DA1F2;
+  padding: 6px 15px;
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0;
+  transition: all 1s ease;
+  cursor: pointer;
+}
+
+.btn.active{
+  opacity: 1;
+}</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Desktop View */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.cards22 {
+  max-width: 70px;
+  display: block;
+  padding: 20px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  fill: #0D4CAB;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #0D4CAB;
+  
+}
+
+
+
+
+
+svg {
+  fill: red;
+
+}
+
+
+
+.container {
+      margin-top: 51px;
+    margin-right: -88%;
+    margin-left: -42%;
+}
+
+.thumbnails {
+  list-style: none;
+  font-size: 0;
+  margin-left: -2%;
+  margin-top: -50px;
+  margin-bottom: 60px;
+}
+
+ul {
+  text-align: center;
+
+}
+.thumbnails li {
+  display: inline-block;
+  width: 20%;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.thumbnails li:hover .item-hugger { background: white; }
+
+.thumbnails li:hover .item-hugger .title { color: #000; }
+
+.thumbnails input[name="select"] { display: none; }
+
+.thumbnails .item-hugger {
+  position: relative;
+  height: auto;
+  margin: 30px 0;
+  background: #ffffff;
+  
+  transition: all 150ms ease-in-out;
+}
+
+.thumbnails label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.thumbnails .title {
+margin-top: 8px;
+  margin-left: 1px;
+  font-size: 14px;
+  text-align: center;
+  color: #555;
+  transition: all 150ms linear;
+}
+
+.thumbnails .thumb-image {
+  height: 100px;
+  padding: 20px 0;
+}
+
+.thumbnails .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top:190px;
+  width: 100%;
+  height: 500px;
+  opacity: 0;
+  transition: all 150ms linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thumbnails .content .title {
+  font-size: 20px;
+  font-weight: 400;
+  display: inline-block;
+  
+}
+
+.thumbnails input[name="select"]:checked + .item-hugger {
+  margin: 0;
+  background: white;
+}
+
+.thumbnails input[name="select"]:checked ~ .content { opacity: 1; }
+
+.white-box {
+  background: white;
+  height: 500px;
+}
+
+
+.title1 {
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: -250px;
+  margin-left: 8%;
+  display: inline-block;
+  
+}
+.title2{
+ float: left;
+ font-size: 22px;
+ margin-left: -65%;
+ margin-top: -620px;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.col {
+  column-count: 2;
+}
+
+
+
+/* Mobile View */
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.col {
+  column-count: 0;
+}
+
+
+.cards22 {
+  max-width: 42px;
+  display: block;
+  padding: 8px 8px;
+  margin-left: auto;
+  margin-right: auto;
+  fill: #0D4CAB;
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: blue;
+  
+}
+
+
+
+svg {
+  fill: red;
+
+}
+
+
+
+.container {
+  height: 134px;
+  position: relative;
+  margin-top:30px;
+}
+
+.thumbnails {
+  list-style: none;
+  font-size: 0;
+  margin-left: -2%;
+}
+
+ul {
+  text-align: center;
+
+}
+.thumbnails li {
+  display: inline-block;
+  
+  width: 20%;
+  margin-bottom: 20px;
+  padding: 0 4%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.thumbnails li:hover .item-hugger { background: white; }
+
+.thumbnails li:hover .item-hugger .title { color: #000; }
+
+.thumbnails input[name="select"] { display: none; }
+
+.thumbnails .item-hugger {
+  position: relative;
+  height: 100px;
+  margin: 50px 0;
+  background: #ffffff;
+  
+  transition: all 150ms ease-in-out;
+}
+
+.thumbnails label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+.thumbnails .title {
+margin-top: 8px;
+  font-size: 8px;
+  font-weight: 1000;
+  
+  text-align: center;
+  color: #555;
+  transition: all 150ms linear;
+  
+}
+
+
+title {
+  margin-top: -500px;
+}
+
+.thumbnails .thumb-image {
+  height: 100px;
+  padding: 20px 0;
+}
+
+.thumbnails .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  opacity: 0;
+  transition: all 150ms linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thumbnails .content .title {
+  font-size: 20px;
+  font-weight: 400;
+  display: inline-block;
+  
+}
+
+.title1 {
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: -250px;
+  margin-left: 8%;
+  display: inline-block;
+  
+}
+
+.title2{
+  font-size: 22px;
+  font-weight: 400;
+  margin-top: -420px;
+  margin-left: -200px;
+  display: inline-block;
+  
+}
+
+
+.thumbnails input[name="select"]:checked + .item-hugger {
+  margin: 0;
+  background: white;
+}
+
+.thumbnails input[name="select"]:checked ~ .content { opacity: 1; }
+
+.white-box {
+  background: white;
+  height: 500px;
+}
+
+
+
+}
+
+p {
+  margin-top: 100px;
+
+}
+
+
+.take_quiz {
+   position: relative;
+   text-align: center; 
+   margin-top: -5px;
+   margin-left: -148px;
+   font-size: 12px;  
+   color: white; 
+   padding: 5px 0; 
+   width: 100%;
+   background-color: rgb(60, 158, 60); 
+   align-self: flex-end;
+   margin-bottom: 100px;
+}
+
+.button1 {
+  width: 100px;
+}
+
+}
+</style>
+
+
+<style>
+
+
+body {
+  background-color: #ffffff;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+
+.helo li {
+    width: 49%;
+}
+
+
+}
+
+
+
+.wrapper {
+  height: 100px;
+    width: 90%;
+    margin: auto;
+  border-radius: 7px 7px 7px 7px;
+  /* VIA CSS MATIC https://goo.gl/cIbnS */
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+
+.product-img {
+  float: left;
+    height: 99px;
+    width: 47%;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+    height: 100px;
+    width: 121px;
+}
+
+.product-info {
+  float: right;
+    height: 100px;
+    width: 53%;
+  border-radius: 0 7px 10px 7px;
+  background-color: #ffffff;
+}
+
+.product-text {
+  height: 100%;
+    width: 100%;
+}
+
+.product-text h1 {
+      margin: -2% 0 0 -15%;
+    padding-top: 0px;
+    font-size: 21px;
+  color: #474747;
+}
+
+.product-text h1,
+.product-price-btn p {
+  font-family: 'Bentham', serif;
+}
+
+.product-text h2 {
+  margin: 0 0 47px 38px;
+  font-size: 13px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
+}
+
+.product-text p {
+  margin: 7% 0 0 -1%;
+  font-family: 'Playfair Display', serif;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 11px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.product-price-btn {
+  margin-top: 22px;
+    margin-left: -147px;
+    position: relative;
+}
+
+.product-price-btn p {
+  display: inline-block;
+  position: absolute;
+  top: -13px;
+  height: 50px;
+  font-family: 'Trocchi', serif;
+  margin: 0 0 0 38px;
+  font-size: 28px;
+  font-weight: lighter;
+  color: #474747;
+}
+
+span {
+  display: inline-block;
+  height: 50px;
+  font-family: 'Suranna', serif;
+  font-size: 34px;
+}
+
+.product-price-btn button {
+      float: right;
+    display: inline-block;
+    height: 22%;
+    width: auto;
+    margin: -19% -43% 7% 0;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: green;
+  cursor: pointer;
+  outline: none;
+}
+
+.product-price-btn button:hover {
+  background-color: #79b0a1;
+}
+
+
+.helo li {
+  width: 21%;
+    margin-left: -52px;
+    margin-right: 1px;
+}
+
+</style>
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+	
+	
+		<ul class="thumbnails">
+	  
+			<li>
+				<input type="radio" name="select" id="topic_card1">
+				<div class="item-hugger">
+					<img class="cards22" src="svg/bulb.svg" alt="">
+					<div class="title">Suggested<br>Topics</div>
+					<label for="topic_card1"></label>
+				</div>
+				<div class="content">
+					<div class="title"><br><br>Suggested Topics...</div>	
+					<div class="common_cards"> 
+				
+						
+						
+						
+						
+						
+						
+						
+						
+						
+					<ul id="activity_box" class="helo" style="margin-top: 45px;" > 
+						<li>
+						<div class="wrapper">
+						<div class="product-img">
+						<img src="https://bit.ly/2tMBBTd" height="220" width="327">
+						<div class="product-price-btn">
+						<button type="button">Take Quiz</button>
+						</div>
+						</div>
+						<div class="product-info">
+						<div class="product-text">
+						<h1>Topic Name</h1>
+						<p>20 Quesitions<br> Required time: 2 hour 35 min</p>
+						</div>
+						</div>
+						</div>
+						
+						</li>
+						<li>
+						<div class="wrapper">
+						<div class="product-img">
+						<img src="https://bit.ly/2tMBBTd" height="220" width="327">
+						<div class="product-price-btn">
+						<button type="button">Take Quiz</button>
+						</div>
+						</div>
+						<div class="product-info">
+						<div class="product-text">
+						<h1>Topic Name</h1>
+						<p>20 Quesitions<br> Required time: 2 hour 35 min</p>
+						</div>
+						</div>
+						</div>
+						
+						</li>
+						<li>
+						<div class="wrapper">
+						<div class="product-img">
+						<img src="https://bit.ly/2tMBBTd" height="220" width="327">
+						<div class="product-price-btn">
+						<button type="button">Take Quiz</button>
+						</div>
+						</div>
+						<div class="product-info">
+						<div class="product-text">
+						<h1>Topic Name</h1>
+						<p>20 Quesitions<br> Required time: 2 hour 35 min</p>
+						</div>
+						</div>
+						</div>
+						
+						</li>
+						<li>
+						<div class="wrapper">
+						<div class="product-img">
+						<img src="https://bit.ly/2tMBBTd" height="220" width="327">
+						<div class="product-price-btn">
+						<button type="button">Take Quiz</button>
+						</div>
+						</div>
+						<div class="product-info">
+						<div class="product-text">
+						<h1>Topic Name</h1>
+						<p>20 Quesitions<br> Required time: 2 hour 35 min</p>
+						</div>
+						</div>
+						</div>
+						
+						</li>
+						
+						<br>
+						
+						<li>
+						<div class="wrapper">
+						<div class="product-img">
+						<img src="https://bit.ly/2tMBBTd" height="220" width="327">
+						<div class="product-price-btn">
+						<button type="button">Take Quiz</button>
+						</div>
+						</div>
+						<div class="product-info">
+						<div class="product-text">
+						<h1>Topic Name</h1>
+						<p>20 Quesitions<br> Required time: 2 hour 35 min</p>
+						</div>
+						</div>
+						</div>
+						
+						</li>
+						
+						<button  class="morebutton button">More</button>
+					</ul>
+					</div> 
+				</div> 
+				
+			
+			</li>
+			
+			<li>
+				<input type="radio" name="select" id="topic_card2">
+				<div class="item-hugger">
+					<img class="cards22" src="svg/book.svg" alt="">
+					<div class="title">Suggested<br>Modules</div>
+					<label for="topic_card2"></label>
+				</div>
+				<div class="content">
+					<div class="title"><br><br>Suggested Modules...</div>	
+					<div class="common_cards"> 
+				
+						<ul id="activity_box" style="margin-top: 45px;" > 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(56, 66, 89); color: white;">Python</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(28, 70, 72); color: white;">Java</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(157, 11, 40); color: white;">Rust</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(94, 59, 77); color: white;">Ruby</h2></li> 
+						</ul> 
+						
+					</div> 
+				</div> 
+				
+			
+			</li>
+			
+			<li>
+				<input type="radio" name="select" id="topic_card3">
+				<div class="item-hugger">
+					<img class="cards22 cards22_flashcardset" src="svg/card.svg" alt="">
+					<div class="title ">Flash<br>Cards</div>
+					<label for="topic_card3"></label>
+				</div>
+				<div class="content">
+					<div class="title"><br><br>Flash Cards ...</div>	
+					<div class="common_cards"> 
+				
+						<ul id="activity_box" style="margin-top: 45px;" > 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(56, 66, 89); color: white;">Python</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(28, 70, 72); color: white;">Java</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(157, 11, 40); color: white;">Rust</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(94, 59, 77); color: white;">Ruby</h2></li> 
+						</ul> 
+						
+					</div> 
+				</div> 
+				
+			
+			</li>
+			
+			<li>
+				<input type="radio" name="select" id="topic_card4">
+				<div class="item-hugger">
+					<img class="cards22" src="svg/flame.svg" alt="">
+					<div class="title">Trending<br>Topics</div>
+					<label for="topic_card4"></label>
+				</div>
+				<div class="content">
+					<div class="title"><br><br>Trending Topics...</div>	
+					<div class="common_cards"> 
+				
+						<ul id="activity_box" style="margin-top: 45px;" > 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(56, 66, 89); color: white;">Python</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(28, 70, 72); color: white;">Java</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(157, 11, 40); color: white;">Rust</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(94, 59, 77); color: white;">Ruby</h2></li> 
+						</ul> 
+						
+					</div> 
+				</div> 
+				
+			
+			</li>
+			
+			<li>
+				<input type="radio" name="select" id="topic_card5">
+				<div class="item-hugger">
+					<img class="cards22" src="svg/profile.svg" alt="">
+					<div class="title">Your<br>Activity</div>
+					<label for="topic_card5"></label>
+				</div>
+				<div class="content">
+					<div class="title"><br><br>Your Activity ...</div>	
+					<div class="common_cards"> 
+				
+						<ul id="activity_box" style="margin-top: 45px;" > 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(56, 66, 89); color: white;">Python</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(28, 70, 72); color: white;">Java</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(157, 11, 40); color: white;">Rust</h2></li> 
+							<li><h2 style="margin-top: 45px;height: 40%; display: flex; justify-content: center; align-items: center; background-color: rgb(94, 59, 77); color: white;">Ruby</h2></li> 
+						</ul> 
+						
+					</div> 
+				</div> 
+				
+			
+			</li>
+		</ul>
+	  
+	
+
+
+	
+	
+	
+
+
+
+	
+
+
+	
+	
+	
+	
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <div class="column3" style="background-color:#bbb;">
+    
+	<!--                                Section  Right                              -->
+	
+	
+	
+	<aside class="left_navbar_aside " style="flex: 0 0 200px; max-width: 200px; min-width: 200px; width: 200px;"> 
+<div class="left_navbar"> 
+<div class="tasker"> 
+<div class="Tests"> 
+<h3>
+ 
+Upcoming Tests</h3> 
+<div class="divisionP"> 
+<span class="material-icons icons_main iconic" aria-hidden="true"> 
+category</span> 
+<div> 
+<a href=""> 
+Topic name 1</a> 
+<p> 
+ 
+ 
+10 Oct 2020</p> 
+</div> 
+</div> 
+<div class="divisionP"> 
+<span class="material-icons icons_main iconic" aria-hidden="true"> 
+category</span> 
+<div> 
+<a href=""> 
+Topic name 1</a> 
+<p> 
+ 
+ 
+10 Oct 2020</p> 
+</div> 
+</div> 
+<div class="divisionP"> 
+<span class="material-icons icons_main iconic" aria-hidden="true"> 
+category</span> 
+<div> 
+<a href=""> 
+Topic name 1</a> 
+<p> 
+ 
+ 
+10 Oct 2020</p> 
+</div> 
+</div> 
+<div class="divisionP"> 
+<span class="material-icons icons_main iconic" aria-hidden="true"> 
+category</span> 
+<div> 
+<a href=""> 
+Topic name 1</a> 
+<p> 
+ 
+ 
+10 Oct 2020</p> 
+</div> 
+</div> 
+<a style="padding: 5px 10px; border: none; color: white; font-size: 13px; margin-left: 40%; background-color: rgb(41, 32, 89); border-radius: 10px;"> 
+More</a> 
+</div> 
+<div class="Card"> 
+</div> 
+<div class="footer"> 
+<a href=""> 
+<p> 
+ 
+ 
+Achievements</p> 
+<img class="imagesvg" src="achievement.svg" alt=""> 
+</a> 
+</div> 
+</div> 
+</div> 
+</aside> 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </div>
+  
+</div>
+</body> 
